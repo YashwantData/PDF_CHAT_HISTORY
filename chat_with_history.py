@@ -93,9 +93,7 @@ def main(pdf):
                 VectorStore = pickle.load(f)
         else:
             embeddings = OpenAIEmbeddings()
-            retry_decorator = _create_retry_decorator(embeddings, exceptions= (opeanai.error.Timeout,openai.error.APIError))
-            with retry_decorator:
-                VectorStore = FAISS.from_texts(chunks, embedding=embeddings)
+            VectorStore = FAISS.from_texts(chunks, embedding=embeddings)
 
         query = st.chat_input(placeholder="Ask questions about your PDF file:")
 
