@@ -70,15 +70,6 @@ with st.sidebar:
     ''')
 
     st.write('💡All about pdf-based chatbot, created by Yashwant Rai')
-    '''for message in st.session_state.messages:
-        role = message["role"]
-        content = message["content"]
-        if role == "user":
-            with st.echo():
-                st.markdown(f"User: {content}")
-        elif role == "assistant":
-            with st.echo():
-                st.markdown(f"Assistant: {content}")'''
 
 def main(pdf):
     if pdf is not None:
