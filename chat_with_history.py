@@ -9,6 +9,7 @@ from langchain.llms import OpenAI
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
 from langchain.prompts.prompt import PromptTemplate
+from dotenv import load_dotenv
 
 import os
 
@@ -72,6 +73,7 @@ with st.sidebar:
     st.write('💡All about pdf-based chatbot, created by Yashwant Rai')
 
 def main(pdf):
+    load_dotenv() 
     if pdf is not None:
         pdf_reader = PdfReader(pdf)
         text = ""
